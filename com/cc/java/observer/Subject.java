@@ -26,7 +26,8 @@ public class Subject implements Observable{
     @Override
     public void notifyObservers() {
         for (Observer o : observers) {
-            o.update();
+            // o.update();  // Pull
+            o.update(state); // Push
         }
     }
 

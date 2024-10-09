@@ -16,7 +16,14 @@ public class App {
         s.setState("Neuer Live-Stream ");
         Helper.output("---------------");
 
+        // FOMO ???
+        Subscriber sub3 = new Subscriber(s, "Marco");
+        s.setState("Neuer Post über Solana");
+        Helper.output("---------------");
+        s.detatch(sub2);  
 
+        s.setState("Neuer Post über Polkadot");
+        Helper.output("---------------");
 
 
     }
