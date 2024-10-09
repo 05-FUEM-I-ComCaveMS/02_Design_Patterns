@@ -14,14 +14,14 @@ public class Subscriber extends Observer{
         s.attach(this);  // eintragen in liste
     }
 
-    /* Variante Pull()*/
-    // @Override
-    // public void update() {
-    //     String str = name + " observes, that subject changed its state to: " + s.getState();
-    //     Helper.output(str);
-    // }
+    // Variante Pull()
+    @Override
+    public void update() {
+        String str = name + " observes, that subject changed its state to: " + s.getState();
+        Helper.output(str);
+    }
 
-    /* Variante Push()*/
+    // Variante Push()
     @Override
     public void update(String msg) {
         String str = name + " observes, that subject changed its state to: " + msg;
