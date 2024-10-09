@@ -1,5 +1,7 @@
 package com.cc.java.observer;
 
+import com.cc.java.tools.Helper;
+
 import java.util.ArrayList;
 import java.util.List;
 

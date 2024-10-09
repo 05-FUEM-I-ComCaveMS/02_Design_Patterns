@@ -1,4 +1,4 @@
-package com.cc.java.observer;
+package com.cc.java.tools;
 
 public class Helper {
 
