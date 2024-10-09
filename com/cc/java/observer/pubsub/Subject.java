@@ -1,5 +1,6 @@
-package com.cc.java.observer;
+package com.cc.java.observer.pubsub;
 
+import com.cc.java.observer.interfaces.Observable;
 import com.cc.java.tools.Helper;
 
 import java.util.ArrayList;
@@ -8,18 +9,22 @@ import java.util.List;
 public class Subject implements Observable{
 
     private String state;
-    private List<Observer> observers = new ArrayList<>();
+    private List<Observer>observers;
+
+    public Subject(){
+        observers = new ArrayList<>();
+    }
 
     // registration interface ...
     @Override
     public void attach(Observer o) {
-        observers.add(o);  // .. lasst ein Abo da
+        observers.add(o);  // Abbonieren
     }
 
     // deregistration interface()
     @Override
     public void detatch(Observer o) {
-        observers.remove(o);
+        observers.remove(o); // Abo beenden
     }
 
     // Notification interface
@@ -39,7 +44,7 @@ public class Subject implements Observable{
     // Subjekt ändert seinen Status (Post/Video ...)
     public void setState(String state) {
         this.state = state;
-        Helper.output("The subject's state is now: " + state);
+        Helper.output("Subject's new state: " + state);
         notifyObservers();
     }
 
